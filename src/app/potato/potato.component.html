@@ -1,0 +1,11 @@
+<h1>Potato</h1>
+<ng-container *ngIf="isLoading$ | async; else tmp">
+  ...Loading
+</ng-container>
+<ng-template #tmp>
+  <ul>
+    <li *ngFor="let potato of potatoes$ | async">
+      Count: {{ potato.count }} Sort: {{ potato.sort }}
+    </li>
+  </ul>
+</ng-template>

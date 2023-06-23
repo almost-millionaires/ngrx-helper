@@ -1,0 +1,11 @@
+<h1>Apples</h1>
+<ng-container *ngIf="isLoading$ | async; else tmp">
+  ...Loading
+</ng-container>
+<ng-template #tmp>
+  <ul>
+    <li *ngFor="let apples of apples$ | async">
+      Count: {{ apples.count }} Sort: {{ apples.sort }}
+    </li>
+  </ul>
+</ng-template>
